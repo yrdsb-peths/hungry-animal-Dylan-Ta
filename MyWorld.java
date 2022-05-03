@@ -19,5 +19,8 @@ public class MyWorld extends World
         super(600, 400, 1);
         Bee bee1 = new Bee ();
         addObject(bee1, 300, 300);
+        
+        Pizza piz = new Pizza();
+        addObject(piz, 250, 0);
     }
 }

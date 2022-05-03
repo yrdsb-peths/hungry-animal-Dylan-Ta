@@ -27,5 +27,8 @@ public class Bee extends Actor
         if(Greenfoot.isKeyDown("a")){
             turn(-2);
         }
+        if(isTouching(Pizza.class)){
+            removeTouching(Pizza.class);
+        }
     }
 }
