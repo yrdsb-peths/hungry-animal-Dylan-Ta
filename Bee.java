@@ -15,6 +15,17 @@ public class Bee extends Actor
     public void act()
     {
         // Add your action code here.
-        move(1);
+        if(Greenfoot.isKeyDown("s")){
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("w")){
+            move(2);
+        }
+        if(Greenfoot.isKeyDown("d")){
+            turn(2);
+        }
+        if(Greenfoot.isKeyDown("a")){
+            turn(-2);
+        }
     }
 }
