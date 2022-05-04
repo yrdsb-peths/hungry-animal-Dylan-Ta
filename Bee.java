@@ -16,19 +16,24 @@ public class Bee extends Actor
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("s")){
-            move(-2);
+            move(-4);
         }
         if(Greenfoot.isKeyDown("w")){
-            move(2);
+            move(4);
         }
         if(Greenfoot.isKeyDown("d")){
-            turn(2);
+            turn(4);
         }
         if(Greenfoot.isKeyDown("a")){
-            turn(-2);
+            turn(-4);
         }
+        eat();
+    }
+    public void eat(){
         if(isTouching(Pizza.class)){
             removeTouching(Pizza.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnPizza();
         }
     }
 }

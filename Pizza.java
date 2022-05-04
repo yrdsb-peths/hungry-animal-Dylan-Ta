@@ -16,6 +16,6 @@ public class Pizza extends Actor
     {
         int x = getX();
         int y = getY();
-        setLocation(x, y + 3);
+        setLocation(x, y + 2);
     }
 }

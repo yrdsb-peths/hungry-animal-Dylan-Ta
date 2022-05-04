@@ -19,8 +19,13 @@ public class MyWorld extends World
         super(600, 400, 1);
         Bee bee1 = new Bee ();
         addObject(bee1, 300, 300);
+        spawnPizza();
         
+    }
+    public void spawnPizza(){
         Pizza piz = new Pizza();
-        addObject(piz, 250, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(piz, x, y);
     }
 }
