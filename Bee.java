@@ -33,6 +33,7 @@ public class Bee extends Actor
         if(isTouching(Pizza.class)){
             removeTouching(Pizza.class);
             MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
             world.spawnPizza();
         }
     }
