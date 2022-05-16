@@ -31,6 +31,7 @@ public class Bee extends Actor
     }
     public void eat(){
         if(isTouching(Pizza.class)){
+            Greenfoot.playSound("sounds/salamisound-1920781-humming-of-a-beehive-swarm.mp3");
             removeTouching(Pizza.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
