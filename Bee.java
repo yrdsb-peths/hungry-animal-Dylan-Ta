@@ -12,38 +12,51 @@ public class Bee extends Actor
      * Act - do whatever the Bee wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage[] images;
-
+    private GreenfootImage[] rightImages;
+    private GreenfootImage[] leftImages;
+    private SimpleTimer timer;
+    private boolean isFacingRight = true;
     public Bee()
     {
-        images = new GreenfootImage[3];
-        for(int i = 0; i < images.length; i++){
-            images[i] = new GreenfootImage("images/bee_idle/idle" + i + ".png");
+        rightImages = new GreenfootImage[3];
+        leftImages = new GreenfootImage[3];
+        for(int i = 0; i < rightImages.length; i++){
+            rightImages[i] = new GreenfootImage("images/bee_idle/idle" + i + ".png");
+            rightImages[i].scale(110,75);
+            leftImages[i] = new GreenfootImage("images/bee_idle/idle" + i + ".png");
+            leftImages[i].scale(110,75);
+            leftImages[i].mirrorHorizontally();
         }
+        setImage(rightImages[0]);
+        timer = new SimpleTimer();
+        timer.mark();
     }
 
-    int curIndex = 0;
+    int currentIndex = 0;
     void animate()
     {
-        setImage(images[curIndex]);
-        curIndex++;
-        curIndex %= 3;
+        if(timer.millisElapsed() > 125){
+            if(isFacingRight) {
+                setImage(rightImages[currentIndex]);
+            } else {
+                setImage(leftImages[currentIndex]);
+            }
+            currentIndex++;
+            currentIndex %= 3;
+            timer.mark();
+        }
     }
     
     public void act()
     {
         // Add your action code here.
-        if(Greenfoot.isKeyDown("s")){
-            move(-4);
-        }
-        if(Greenfoot.isKeyDown("w")){
-            move(4);
+        if(Greenfoot.isKeyDown("a")){
+            isFacingRight = false;
+            move(-3);
         }
         if(Greenfoot.isKeyDown("d")){
-            turn(4);
-        }
-        if(Greenfoot.isKeyDown("a")){
-            turn(-4);
+            isFacingRight = true;
+            move(3);
         }
         eat();
         animate();

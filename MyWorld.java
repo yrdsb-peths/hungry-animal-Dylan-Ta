@@ -18,7 +18,9 @@ public class MyWorld extends World
         addObject(bee1, 300, 300);
         addObject(scoreLabel, 40,30);
         spawnPizza();
-        
+        GreenfootImage background = new GreenfootImage("images/Forest.png");  
+        background.scale(600,400);
+        setBackground(background);
     }
     public void spawnPizza(){
         Pizza piz = new Pizza();
