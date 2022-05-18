@@ -1,5 +1,6 @@
 #Greenfoot project file
-class.Bee.image=bee2.png
+class.Bee.image=idle0.png
+class.MyWorld.image=Forest.png
 class.Pizza.image=Pizza.png
 dependency1.from=MyWorld
 dependency1.to=Label
@@ -19,10 +20,10 @@ dependency5.type=UsesDependency
 dependency6.from=Bee
 dependency6.to=Pizza
 dependency6.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=360
+editor.fx.0.y=28
 height=838
 package.numDependencies=6
 package.numTargets=4

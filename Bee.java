@@ -12,6 +12,24 @@ public class Bee extends Actor
      * Act - do whatever the Bee wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootImage[] images;
+
+    public Bee()
+    {
+        images = new GreenfootImage[3];
+        for(int i = 0; i < images.length; i++){
+            images[i] = new GreenfootImage("images/bee_idle/idle" + i + ".png");
+        }
+    }
+
+    int curIndex = 0;
+    void animate()
+    {
+        setImage(images[curIndex]);
+        curIndex++;
+        curIndex %= 3;
+    }
+    
     public void act()
     {
         // Add your action code here.
@@ -28,6 +46,7 @@ public class Bee extends Actor
             turn(-4);
         }
         eat();
+        animate();
     }
     public void eat(){
         if(isTouching(Pizza.class)){
