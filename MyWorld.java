@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int score = 0;
+    public static int score = 0;
     public Label scoreLabel = new Label(score, 80);
     public MyWorld()
     {    
@@ -35,7 +35,7 @@ public class MyWorld extends World
     }
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over!", 100);
-        addObject(gameOverLabel, 300, 200);
+        GameOverWorld world = new GameOverWorld();
+        Greenfoot.setWorld(world);
     }
 }
