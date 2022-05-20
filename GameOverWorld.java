@@ -21,5 +21,6 @@ public class GameOverWorld extends World
 
         Label scoreLabel = new Label("Score: " + MyWorld.score, 80);
         addObject(scoreLabel, 280, 280);
+        MyWorld.score = 0;
     }
 }

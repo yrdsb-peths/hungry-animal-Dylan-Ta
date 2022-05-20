@@ -17,6 +17,7 @@ public class TitleWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        MyWorld.score = 0;
         Label titleLabel = new Label("A Hungry Bee", 60);
         addObject(titleLabel,300, 200);
         Label instructionLabel = new Label("Press <enter> to begin", 50);
