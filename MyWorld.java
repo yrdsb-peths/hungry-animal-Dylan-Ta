@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * MyWorld creates game world
  * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * @author Dylan Ta
+ * @version May 2022
+*/
 public class MyWorld extends World
 {
     public static int score = 0;
