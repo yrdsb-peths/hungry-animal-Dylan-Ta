@@ -16,6 +16,7 @@ public class Bee extends Actor
     private GreenfootImage[] leftImages;
     private SimpleTimer timer;
     private boolean isFacingRight = true;
+    private int counter = 0;
     public Bee()
     {
         rightImages = new GreenfootImage[3];
@@ -63,7 +64,9 @@ public class Bee extends Actor
     }
     public void eat(){
         if(isTouching(Pizza.class)){
-            Greenfoot.playSound("sounds/bee_sound.mp3");
+            if(counter > 2){
+                Greenfoot.playSound("sounds/bee_sound.mp3");
+            }
             removeTouching(Pizza.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
